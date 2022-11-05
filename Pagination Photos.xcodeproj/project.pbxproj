@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16266D2E291720E900720112 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16266D2D291720E900720112 /* EndPoints.swift */; };
+		16266D30291721B400720112 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16266D2F291721B400720112 /* Photos.swift */; };
 		16C4F1E829167E9500E741A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4F1E729167E9500E741A6 /* AppDelegate.swift */; };
 		16C4F1EA29167E9500E741A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4F1E929167E9500E741A6 /* SceneDelegate.swift */; };
 		16C4F1EF29167E9500E741A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C4F1ED29167E9500E741A6 /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16266D2D291720E900720112 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		16266D2F291721B400720112 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		16C4F1E429167E9500E741A6 /* Pagination Photos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pagination Photos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C4F1E729167E9500E741A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16C4F1E929167E9500E741A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 		16C4F2002916809100E741A6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				16266D2F291721B400720112 /* Photos.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,6 +115,7 @@
 		16C4F2012916816000E741A6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				16266D2D291720E900720112 /* EndPoints.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -147,7 +153,6 @@
 				556FA50301A3490ECD6CA5A1 /* Pods-Pagination Photos.debug.xcconfig */,
 				61EE469743F50EDB75F142D6 /* Pods-Pagination Photos.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -266,7 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16266D30291721B400720112 /* Photos.swift in Sources */,
 				16C4F1F229167E9500E741A6 /* Pagination_Photos.xcdatamodeld in Sources */,
+				16266D2E291720E900720112 /* EndPoints.swift in Sources */,
 				16C4F208291683C000E741A6 /* PhotosViewController.swift in Sources */,
 				16C4F1E829167E9500E741A6 /* AppDelegate.swift in Sources */,
 				16C4F1EA29167E9500E741A6 /* SceneDelegate.swift in Sources */,
