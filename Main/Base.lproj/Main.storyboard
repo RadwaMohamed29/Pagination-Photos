@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RHD-Ua-zN0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photos View Controller-->
+        <scene sceneID="Td1-6L-KVk">
+            <objects>
+                <viewController id="RHD-Ua-zN0" customClass="PhotosViewController" customModule="Pagination_Photos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WMD-gU-K5j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9cd-HM-oR4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BjJ-5D-D4k"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9cd-HM-oR4" firstAttribute="leading" secondItem="BjJ-5D-D4k" secondAttribute="leading" id="YfA-Sy-rQr"/>
+                            <constraint firstItem="9cd-HM-oR4" firstAttribute="width" secondItem="WMD-gU-K5j" secondAttribute="width" id="gQV-As-0C2"/>
+                            <constraint firstItem="BjJ-5D-D4k" firstAttribute="trailing" secondItem="9cd-HM-oR4" secondAttribute="trailing" id="iBk-k6-WHC"/>
+                            <constraint firstItem="9cd-HM-oR4" firstAttribute="bottom" secondItem="BjJ-5D-D4k" secondAttribute="bottom" id="qp7-fg-JHi"/>
+                            <constraint firstItem="9cd-HM-oR4" firstAttribute="top" secondItem="BjJ-5D-D4k" secondAttribute="top" id="zCh-EW-0R4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="photosTableView" destination="9cd-HM-oR4" id="0k8-Ap-paP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D4Z-0Z-ySw" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="68" y="70"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -9,19 +9,24 @@
 /* Begin PBXBuildFile section */
 		16266D2E291720E900720112 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16266D2D291720E900720112 /* EndPoints.swift */; };
 		16266D30291721B400720112 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16266D2F291721B400720112 /* Photos.swift */; };
+		16266D352917253C00720112 /* PhotosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16266D332917253C00720112 /* PhotosTableViewCell.xib */; };
+		16266D382917287A00720112 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16266D372917287A00720112 /* PhotosViewController.swift */; };
+		16266D3A2917291E00720112 /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16266D392917291E00720112 /* PhotosTableViewCell.swift */; };
 		16C4F1E829167E9500E741A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4F1E729167E9500E741A6 /* AppDelegate.swift */; };
 		16C4F1EA29167E9500E741A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4F1E929167E9500E741A6 /* SceneDelegate.swift */; };
 		16C4F1EF29167E9500E741A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C4F1ED29167E9500E741A6 /* Main.storyboard */; };
 		16C4F1F229167E9500E741A6 /* Pagination_Photos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 16C4F1F029167E9500E741A6 /* Pagination_Photos.xcdatamodeld */; };
 		16C4F1F429167E9700E741A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16C4F1F329167E9700E741A6 /* Assets.xcassets */; };
 		16C4F1F729167E9700E741A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C4F1F529167E9700E741A6 /* LaunchScreen.storyboard */; };
-		16C4F208291683C000E741A6 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4F207291683C000E741A6 /* PhotosViewController.swift */; };
 		2D0E3DA4AD7D8365390631B9 /* Pods_Pagination_Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA11B23FC3DA467DADEE7379 /* Pods_Pagination_Photos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		16266D2D291720E900720112 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		16266D2F291721B400720112 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		16266D332917253C00720112 /* PhotosTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosTableViewCell.xib; sourceTree = "<group>"; };
+		16266D372917287A00720112 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		16266D392917291E00720112 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
 		16C4F1E429167E9500E741A6 /* Pagination Photos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pagination Photos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C4F1E729167E9500E741A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16C4F1E929167E9500E741A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,7 +35,6 @@
 		16C4F1F329167E9700E741A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16C4F1F629167E9700E741A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16C4F1F829167E9700E741A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		16C4F207291683C000E741A6 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		556FA50301A3490ECD6CA5A1 /* Pods-Pagination Photos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pagination Photos.debug.xcconfig"; path = "Target Support Files/Pods-Pagination Photos/Pods-Pagination Photos.debug.xcconfig"; sourceTree = "<group>"; };
 		61EE469743F50EDB75F142D6 /* Pods-Pagination Photos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pagination Photos.release.xcconfig"; path = "Target Support Files/Pods-Pagination Photos/Pods-Pagination Photos.release.xcconfig"; sourceTree = "<group>"; };
 		EA11B23FC3DA467DADEE7379 /* Pods_Pagination_Photos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pagination_Photos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,10 +60,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		16266D312917250000720112 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				16266D332917253C00720112 /* PhotosTableViewCell.xib */,
+				16266D392917291E00720112 /* PhotosTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		16266D362917265900720112 /* ListOfPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				16266D312917250000720112 /* Cell */,
+				16266D372917287A00720112 /* PhotosViewController.swift */,
+			);
+			path = ListOfPhotos;
+			sourceTree = "<group>";
+		};
 		16C4F1DB29167E9500E741A6 = {
 			isa = PBXGroup;
 			children = (
 				16C4F1E629167E9500E741A6 /* Pagination Photos */,
+				16C4F2022916823400E741A6 /* AppDelegate */,
+				16C4F2032916824100E741A6 /* Main */,
 				16C4F1E529167E9500E741A6 /* Products */,
 				976E37B3D9ECBB15E5EBADFD /* Pods */,
 				00B51F81CE591BF3EA5DB982 /* Frameworks */,
@@ -78,23 +102,21 @@
 			isa = PBXGroup;
 			children = (
 				16C4F2042916829600E741A6 /* CoreData */,
-				16C4F2032916824100E741A6 /* Main */,
-				16C4F2022916823400E741A6 /* AppDelegate */,
 				16C4F2012916816000E741A6 /* Network */,
 				16C4F2002916809100E741A6 /* Model */,
 				16C4F1FF2916808500E741A6 /* ViewModel */,
-				16C4F1FE2916807600E741A6 /* View */,
+				16C4F1FE2916807600E741A6 /* Views */,
 				16C4F1F829167E9700E741A6 /* Info.plist */,
 			);
 			path = "Pagination Photos";
 			sourceTree = "<group>";
 		};
-		16C4F1FE2916807600E741A6 /* View */ = {
+		16C4F1FE2916807600E741A6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				16C4F207291683C000E741A6 /* PhotosViewController.swift */,
+				16266D362917265900720112 /* ListOfPhotos */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		16C4F1FF2916808500E741A6 /* ViewModel */ = {
@@ -216,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16266D352917253C00720112 /* PhotosTableViewCell.xib in Resources */,
 				16C4F1F729167E9700E741A6 /* LaunchScreen.storyboard in Resources */,
 				16C4F1F429167E9700E741A6 /* Assets.xcassets in Resources */,
 				16C4F1EF29167E9500E741A6 /* Main.storyboard in Resources */,
@@ -272,9 +295,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				16266D30291721B400720112 /* Photos.swift in Sources */,
+				16266D3A2917291E00720112 /* PhotosTableViewCell.swift in Sources */,
 				16C4F1F229167E9500E741A6 /* Pagination_Photos.xcdatamodeld in Sources */,
 				16266D2E291720E900720112 /* EndPoints.swift in Sources */,
-				16C4F208291683C000E741A6 /* PhotosViewController.swift in Sources */,
+				16266D382917287A00720112 /* PhotosViewController.swift in Sources */,
 				16C4F1E829167E9500E741A6 /* AppDelegate.swift in Sources */,
 				16C4F1EA29167E9500E741A6 /* SceneDelegate.swift in Sources */,
 			);
