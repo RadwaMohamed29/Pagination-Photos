@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import LPSnackbar
 extension UIViewController{
     func applyCirclePhoto(photo: UIImageView){
        // photo.layer.borderWidth = 1
@@ -14,6 +15,22 @@ extension UIViewController{
         photo.layer.borderColor = UIColor.black.cgColor
         photo.layer.cornerRadius = photo.frame.height/2
         photo.clipsToBounds = true
+    }
+    func showSnackBar(){
+       
+        let snack = LPSnackbar(title: "network is not connected", buttonTitle: "dismiss")
+        // Customize the snack
+        snack.bottomSpacing = (tabBarController?.tabBar.frame.minX ?? 0)
+        snack.view.titleLabel.font = UIFont.systemFont(ofSize: 20)
+
+        // Show a snack to allow user to undo deletion
+        snack.show(animated: true) { (undone) in
+            if undone {
+                snack.dismiss()
+            } else {
+                snack.show()
+            }
+        }
     }
     
 }

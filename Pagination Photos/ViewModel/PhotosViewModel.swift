@@ -23,14 +23,15 @@ protocol PhotosViewModelType{
 
 class PhotosViewModel: PhotosViewModelType{
 
-    var network = APIClient()
+   private var network: APIClient
     var pages = 10
     var limit = 10
     var paginationPhotos: [PhotosData] = []
     private var view: PhotosView?
     var photoList: [Photo]?
     var localDataSource:LocalDataSourcable?
-    init(_ view: PhotosView){
+    init(_ view: PhotosView, network: APIClient = APIClient() ){
+        self.network = network
         self.view = view
         localDataSource = LocalDataSource(appDelegate: ((UIApplication.shared.delegate as? AppDelegate)!))
     }

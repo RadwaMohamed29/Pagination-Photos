@@ -41,6 +41,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if isConnected{
                 self.fetchData()
             }else{
+                showSnackBar()
                 do{
                     try self.photosViewModel?.getAllPhotosFromCoreData(completion: { response in
                         switch response{
@@ -58,10 +59,13 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.list = self.photosViewModel?.photoList ?? []
                 self.photosTableView.reloadData()
             }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.refreshController.endRefreshing()
+            }
         }
-        DispatchQueue.main.async { [weak self] in
-            self?.photosTableView.reloadData()
-        }
+//        DispatchQueue.main.async { [weak self] in
+//            self?.photosTableView.reloadData()
+//        }
        
     }
     @objc func pullToRefresh(){
