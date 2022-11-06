@@ -18,17 +18,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Scq-Z9-St6">
-                        <rect key="frame" x="0.0" y="0.0" width="352" height="114"/>
+                        <rect key="frame" x="4" y="4" width="344" height="106"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wOY-2a-hqe">
-                                <rect key="frame" x="0.0" y="0.0" width="132" height="114"/>
+                                <rect key="frame" x="2" y="0.0" width="120" height="106"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="132" id="b4e-aS-jZV"/>
+                                    <constraint firstAttribute="width" constant="120" id="b4e-aS-jZV"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYQ-8z-d2C">
-                                <rect key="frame" x="140" y="14" width="204" height="86"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYQ-8z-d2C">
+                                <rect key="frame" x="130" y="14" width="206" height="78"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -37,29 +37,24 @@
                         <constraints>
                             <constraint firstItem="wOY-2a-hqe" firstAttribute="top" secondItem="Scq-Z9-St6" secondAttribute="top" id="7cH-Kx-7Wm"/>
                             <constraint firstItem="CYQ-8z-d2C" firstAttribute="leading" secondItem="wOY-2a-hqe" secondAttribute="trailing" constant="8" id="CFf-ri-sii"/>
-                            <constraint firstItem="wOY-2a-hqe" firstAttribute="width" secondItem="Scq-Z9-St6" secondAttribute="width" multiplier="0.375" id="CvY-dS-w0a"/>
-                            <constraint firstItem="wOY-2a-hqe" firstAttribute="leading" secondItem="Scq-Z9-St6" secondAttribute="leading" id="EpM-8E-ltI"/>
+                            <constraint firstItem="wOY-2a-hqe" firstAttribute="leading" secondItem="Scq-Z9-St6" secondAttribute="leading" constant="2" id="EpM-8E-ltI"/>
                             <constraint firstAttribute="bottom" secondItem="wOY-2a-hqe" secondAttribute="bottom" id="ajB-PB-t41"/>
                             <constraint firstAttribute="bottom" secondItem="CYQ-8z-d2C" secondAttribute="bottom" constant="14" id="e5K-47-uFN"/>
-                            <constraint firstItem="CYQ-8z-d2C" firstAttribute="width" secondItem="Scq-Z9-St6" secondAttribute="width" multiplier="0.579545" id="f6m-xn-fMf"/>
                             <constraint firstItem="CYQ-8z-d2C" firstAttribute="top" secondItem="Scq-Z9-St6" secondAttribute="top" constant="14" id="rVK-CY-me9"/>
                             <constraint firstItem="wOY-2a-hqe" firstAttribute="height" secondItem="Scq-Z9-St6" secondAttribute="height" id="sbK-it-IDP"/>
                             <constraint firstAttribute="trailing" secondItem="CYQ-8z-d2C" secondAttribute="trailing" constant="8" id="vVY-Zi-NEm"/>
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" systemColor="systemGray5Color"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Scq-Z9-St6" secondAttribute="trailing" id="2co-eI-jL8"/>
-                    <constraint firstItem="Scq-Z9-St6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="aRS-6u-Q06"/>
-                    <constraint firstItem="Scq-Z9-St6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ePW-kv-zZj"/>
-                    <constraint firstAttribute="bottom" secondItem="Scq-Z9-St6" secondAttribute="bottom" id="yol-2t-emH"/>
+                    <constraint firstAttribute="trailing" secondItem="Scq-Z9-St6" secondAttribute="trailing" constant="4" id="2co-eI-jL8"/>
+                    <constraint firstItem="Scq-Z9-St6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="aRS-6u-Q06"/>
+                    <constraint firstItem="Scq-Z9-St6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="ePW-kv-zZj"/>
+                    <constraint firstAttribute="bottom" secondItem="Scq-Z9-St6" secondAttribute="bottom" constant="4" id="yol-2t-emH"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <constraints>
-                <constraint firstItem="Scq-Z9-St6" firstAttribute="width" secondItem="njF-e1-oar" secondAttribute="width" id="Q5g-CB-SDV"/>
-                <constraint firstItem="Scq-Z9-St6" firstAttribute="height" secondItem="njF-e1-oar" secondAttribute="height" id="hpF-7Z-uRG"/>
-            </constraints>
             <connections>
                 <outlet property="cellView" destination="Scq-Z9-St6" id="x6I-DD-VqR"/>
                 <outlet property="photoImageView" destination="wOY-2a-hqe" id="Wog-sz-a0M"/>
@@ -71,6 +66,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

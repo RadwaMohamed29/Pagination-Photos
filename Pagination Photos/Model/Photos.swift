@@ -6,15 +6,19 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct Photos: Codable{
-    var array: [PhotoData]?
+// MARK: - PhotosData
+struct PhotosData: Codable {
+    let albumID, id: Int
+    let title: String
+    let url, thumbnailURL: String
+
+    enum CodingKeys: String, CodingKey {
+        case albumID = "albumId"
+        case id, title, url
+        case thumbnailURL = "thumbnailUrl"
+    }
 }
 
-struct PhotoData: Codable{
-    let albumId: Int?
-    let id :Int?
-    let title: String?
-    let url: String?
-    let thumbnailUrl: String?
-}
+typealias Photos = [PhotosData]
