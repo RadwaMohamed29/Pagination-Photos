@@ -11,7 +11,7 @@ import Kingfisher
 protocol PhotosView: AnyObject {
     func reloadPhotosTableView()
 }
-class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PhotosViewController: UIViewController{
     var photosViewModel: PhotosViewModelType?
     @IBOutlet weak var photosTableView: UITableView!
     var imageView = UIImageView()
@@ -25,10 +25,8 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         photosTableView.delegate = self
         photosTableView.dataSource = self
         photosViewModel = PhotosViewModel(self)
-        print("no photos \(String(describing: photosViewModel?.returnPhotosCount()))")
         refreshController.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
         photosTableView.addSubview(refreshController)
-        //checkConnection()
         
         
     }
@@ -50,7 +48,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         case false:
                             print("data cant't retrieved")
                         }}
-                        
+                                                                       
                     )
                 }
                 catch let error{
@@ -63,10 +61,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.refreshController.endRefreshing()
             }
         }
-//        DispatchQueue.main.async { [weak self] in
-//            self?.photosTableView.reloadData()
-//        }
-       
+        
     }
     @objc func pullToRefresh(){
         refreshController.beginRefreshing()
@@ -94,6 +89,10 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
     }
+    
+    
+}
+extension PhotosViewController:  UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isConn == true{
             return photosViewModel?.returnPhotosCount() ?? 0
@@ -108,7 +107,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         else{
             return UITableViewCell()
         }
-       
+        
         if isConn{
             let item = photosViewModel?.getUsedPhotos(at: indexPath.row)
             cell.photoTitle.text = item?.title
@@ -138,35 +137,35 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 case false:
                     print("can not add to core data")
                 }})
-            }
-                                                
-                catch let error{
-                    print(error.localizedDescription)
-                }
-                
-            
-            photosViewModel?.willDisplayPhoto(at: indexPath.row)
-                                                
         }
-                                                
         
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            if let photoDetailsVC = storyboard?.instantiateViewController(withIdentifier: "PhotoDetailsViewController" ) as? PhotoDetailsViewController{
-                photoDetailsVC.Url = photosViewModel?.getUsedPhotos(at: indexPath.row).url
-                navigationController?.pushViewController(photoDetailsVC, animated: true)
-            }
+        catch let error{
+            print(error.localizedDescription)
         }
         
         
+        photosViewModel?.willDisplayPhoto(at: indexPath.row)
         
     }
-    extension PhotosViewController: PhotosView{
-        func reloadPhotosTableView() {
-            DispatchQueue.main.async {
-                self.photosTableView.reloadData()
-            }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let photoDetailsVC = storyboard?.instantiateViewController(withIdentifier: "PhotoDetailsViewController" ) as? PhotoDetailsViewController{
+            photoDetailsVC.Url = photosViewModel?.getUsedPhotos(at: indexPath.row).url
+            navigationController?.pushViewController(photoDetailsVC, animated: true)
         }
-        
-
-        
     }
+    
+    
+    
+}
+extension PhotosViewController: PhotosView{
+    func reloadPhotosTableView() {
+        DispatchQueue.main.async {
+            self.photosTableView.reloadData()
+        }
+    }
+    
+    
+    
+}

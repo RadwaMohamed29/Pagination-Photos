@@ -25,7 +25,7 @@ class APIClient: NetworkServiceProtocol{
             case .failure(let error):
                 completion(.failure(error))
                 print("errorfromapi \(error.localizedDescription)")
-
+                
             case .success(_):
                 guard let data = res.data else{return}
                 do{
@@ -39,6 +39,6 @@ class APIClient: NetworkServiceProtocol{
             }
             
         }
-
+        
     }
 }

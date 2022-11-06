@@ -22,8 +22,8 @@ protocol PhotosViewModelType{
 }
 
 class PhotosViewModel: PhotosViewModelType{
-
-   private var network: APIClient
+    
+    private var network: APIClient
     var pages = 10
     var limit = 10
     var paginationPhotos: [PhotosData] = []
@@ -66,7 +66,7 @@ class PhotosViewModel: PhotosViewModelType{
     }
     
     var getPhotos: ((PhotosViewModelType) -> Void)?
-
+    
     
     func returnPhotosCount() -> Int {
         return paginationPhotos.count
@@ -82,7 +82,7 @@ class PhotosViewModel: PhotosViewModelType{
         }
     }
     
-
+    
     
     private func addNewPhotos(){
         if pages >= limit {
@@ -114,7 +114,7 @@ class PhotosViewModel: PhotosViewModelType{
             throw error
         }
     }
-  
+    
     func getAllPhotosFromCoreData(completion: @escaping (Bool) -> Void) throws {
         do{
             try  photoList =  localDataSource?.getPhotosFromCoreData()
@@ -125,6 +125,6 @@ class PhotosViewModel: PhotosViewModelType{
         }
     }
     
-
+    
     
 }

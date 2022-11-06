@@ -15,6 +15,7 @@ class PhotoDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpScrollView()
+        title = "Photo Details"
     }
     
     func setUpScrollView(){
