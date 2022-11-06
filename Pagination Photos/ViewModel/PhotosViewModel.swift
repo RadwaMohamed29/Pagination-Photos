@@ -6,13 +6,18 @@
 //
 
 import Foundation
+import UIKit
 protocol PhotosViewModelType{
     func callFuncToGetALlPhotos(completion: @escaping(Bool)-> Void)
     var getPhotos: ((PhotosViewModelType)-> Void)? {get set}
     var listOfPhotos: [PhotosData] {get set}
+    var paginationPhotos: [PhotosData] {get set}
+    var photoList: [Photo]? {get set}
     func returnPhotosCount()-> Int
     func getUsedPhotos(at row: Int) -> PhotosData
     func willDisplayPhoto(at row: Int)
+    func saveToCoreData(title: String, url: String,completion:@escaping (Bool) -> Void) throws
+    func getAllPhotosFromCoreData(completion: @escaping (Bool) -> Void) throws
     
 }
 
@@ -23,9 +28,11 @@ class PhotosViewModel: PhotosViewModelType{
     var limit = 10
     var paginationPhotos: [PhotosData] = []
     private var view: PhotosView?
-    
+    var photoList: [Photo]?
+    var localDataSource:LocalDataSourcable?
     init(_ view: PhotosView){
         self.view = view
+        localDataSource = LocalDataSource(appDelegate: ((UIApplication.shared.delegate as? AppDelegate)!))
     }
     
     var listOfPhotos: [PhotosData] = []{
@@ -96,6 +103,27 @@ class PhotosViewModel: PhotosViewModelType{
             self?.view?.reloadPhotosTableView()
         }
     }
+    func saveToCoreData(title: String, url: String,completion:@escaping (Bool) -> Void) throws {
+        do{
+            try localDataSource?.saveToCoreData(title: title, url: url)
+            completion(true)
+            
+        }catch let error {
+            completion(false)
+            throw error
+        }
+    }
+  
+    func getAllPhotosFromCoreData(completion: @escaping (Bool) -> Void) throws {
+        do{
+            try  photoList =  localDataSource?.getPhotosFromCoreData()
+            completion(true)
+        }catch let error{
+            completion(false)
+            throw error
+        }
+    }
     
+
     
 }
