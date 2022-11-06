@@ -72,7 +72,14 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         photosViewModel?.willDisplayPhoto(at: indexPath.row)
 
     }
-
+     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let photoDetailsVC = storyboard?.instantiateViewController(withIdentifier: "PhotoDetailsViewController" ) as? PhotoDetailsViewController{
+            photoDetailsVC.Url = photosViewModel?.getUsedPhotos(at: indexPath.row).url
+            navigationController?.pushViewController(photoDetailsVC, animated: true)
+        }
+    }
+    
 
 
 }
